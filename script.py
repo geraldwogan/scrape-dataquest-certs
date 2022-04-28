@@ -51,3 +51,5 @@ dq_dir = downloads_path + "\DQ"
 if not os.path.exists(dq_dir):
     os.makedirs(dq_dir)
 
+for g in get_files:
+    os.replace(downloads_path + '\\' + g, dq_dir + '\\' + g) 

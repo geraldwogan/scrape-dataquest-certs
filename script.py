@@ -26,7 +26,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 #     href = elem.get_attribute('href')
 #     if 'view_cert' in str(href):
 #         cert_links.append(href)
-# print(len(cert_links), 'certificate links found')
+# certs_found = len(cert_links)
+# print(certs_found, 'certificate links found')
 
 ## For each cert
 # for link in cert_links:
@@ -47,9 +48,15 @@ for filename in os.listdir(downloads_path):
         get_files.append(filename)
 print(len(get_files))
 
+# Create directory to store certs together
 dq_dir = downloads_path + "\DQ"
 if not os.path.exists(dq_dir):
     os.makedirs(dq_dir)
 
+# Move certs to directory
 for g in get_files:
     os.replace(downloads_path + '\\' + g, dq_dir + '\\' + g) 
+
+# Check the correct number of certs have been downloaded
+if certs_found == len(os.listdir(dq_dir)):
+    print(f'All {certs_found} have been downloaded and saved in the {dq_dir} directory!')

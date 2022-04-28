@@ -39,10 +39,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 # dl.click()
 # time.sleep(1.5)
 
+# Find downloaded certs
 downloads_path = str(Path.home() / "Downloads")
 get_files = []
 for filename in os.listdir(downloads_path):
     if (filename.split('--'))[0] == 'Gerald-Wogan' and (filename.split('.'))[-1] == 'pdf':
         get_files.append(filename)
 print(len(get_files))
+
+dq_dir = downloads_path + "\DQ"
+if not os.path.exists(dq_dir):
+    os.makedirs(dq_dir)
 

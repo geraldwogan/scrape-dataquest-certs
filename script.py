@@ -30,15 +30,15 @@ certs_found = len(cert_links)
 print(certs_found, 'certificate links found')
 
 # For each cert
-# for link in cert_links:
+for link in cert_links:
 #     ## Open link
-#     driver.get(link)
-driver.get(cert_links[0])
+    driver.get(link)
+# driver.get(cert_links[0])
     # Click Download
-b = driver.find_elements(by=By.TAG_NAME, value='button') 
-dl = b[-1]
-dl.click()
-time.sleep(3)
+    b = driver.find_elements(by=By.TAG_NAME, value='button') 
+    dl = b[-1]
+    dl.click()
+    time.sleep(3)
 
 # Find downloaded certs
 downloads_path = str(Path.home() / "Downloads")
@@ -62,4 +62,4 @@ for g in get_files:
 
 # Check the correct number of certs have been downloaded
 if certs_found == len(os.listdir(dq_dir)):
-    print(f'All {certs_found} have been downloaded and saved in the {dq_dir} directory!')
+    print(f'All {certs_found} certs have been downloaded and saved in the {dq_dir} directory!')

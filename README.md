@@ -1,9 +1,10 @@
 ---- OUTLINE ----
-- Navigate to Dataquest. 
-- Sign-In
 - Navigate to Certificates page: https://app.dataquest.io/profile/gerald.wogan
 - Scrape list of links to certs
-
 - For each cert
     - Open link
     - Click Download
+- Crate 'DQ' folder for certificated
+- For each downloaded link
+    - Find in Downloads folder.
+    - Move to 'DQ' folder
